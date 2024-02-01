@@ -3,6 +3,13 @@
 require_once('vendor/autoload.php');
 $env = require_once('env.php');
 
+$username = isset($_POST['username']) ? $_POST['username'] : '';
+$password = isset($_POST['password']) ? $_POST['password'] : '';
+
+if
+   ($username !== 'odeme_user' || $password !== 'odeme_user_password') 
+   {echo "Hata: Geçersiz kimlik bilgileri"; exit;}
+
 $options = new \Iyzipay\Options();
 $options->setApiKey($env['apiKey']);
 $options->setSecretKey($env['secretKey']);
